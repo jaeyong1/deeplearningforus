@@ -1,0 +1,5 @@
+import tensorflow as tf
+device_name = tf.test.gpu_device_name()
+if device_name != '/device:GPU:0':
+  raise SystemError('GPU장치를 찾지못했습니다.')
+print('GPU를 찾았습니다. 장치 : {}'.format(device_name))
