@@ -1,0 +1,21 @@
+from __future__ import division
+from __future__ import print_function
+import os.path
+import numpy as np
+import matplotlib.pyplot as plt
+import tensorflow as tf
+tf.logging.set_verbosity(tf.logging.ERROR)
+from tensorflow.examples.tutorials.mnist import input_data
+
+
+#MNIST를 인터넷에서 받아서 mnist_data 폴더에 저장
+mnist = input_data.read_data_sets('mnist_data', one_hot=True)
+
+#show 6 images from random index
+for i in np.random.randint(55000, size=6):
+    imgvec = mnist.train.images[i, :]
+    labelvec = mnist.train.labels[i, :]
+    imgmatrix = np.reshape(imgvec, (28, 28))    # (784,) -> (28, 28)
+    label = np.argmax(labelvec)     #[0 0 1..] -> 2
+    plt.matshow(imgmatrix, cmap=plt.get_cmap('gray'))
+    plt.title("Index: %d, Label: %d" % (i, label))
