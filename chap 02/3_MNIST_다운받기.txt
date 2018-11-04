@@ -1,0 +1,12 @@
+from __future__ import division
+from __future__ import print_function
+import os.path
+import numpy as np
+import matplotlib.pyplot as plt
+import tensorflow as tf
+tf.logging.set_verbosity(tf.logging.ERROR)
+from tensorflow.examples.tutorials.mnist import input_data
+
+
+#MNIST를 인터넷에서 받아서 mnist_data 폴더에 저장
+mnist = input_data.read_data_sets('mnist_data', one_hot=True)
