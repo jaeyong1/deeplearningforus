@@ -1,6 +1,9 @@
 
 import tensorflow as tf
 
+#불필요안내멘트 출력제한
+tf.logging.set_verbosity(tf.logging.ERROR)
+
 # MNIST 데이터를 다운로드 한다.
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
