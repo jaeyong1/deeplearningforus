@@ -81,7 +81,7 @@ def main():
   sess= tf.Session()
   
   ckpt=tf.train.get_checkpoint_state("/tmp")
-  print(ckpt.model_checkpoint_path)
+  #print(ckpt.model_checkpoint_path)
   if (ckpt!=None) and tf.train.checkpoint_exists(ckpt.model_checkpoint_path):
     saver.restore(sess, ckpt.model_checkpoint_path)
     print("variable is restored")
